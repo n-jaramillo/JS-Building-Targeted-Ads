@@ -1,5 +1,13 @@
 // get user's data
 // get user's coordinates
+async function getCoords() {
+    pos = await new Promise ((resolve, reject) => {
+        navigator.geolocation.getCurrentPosition(resolve, reject)
+    })
+    return [pos.coords.latitube, pos.coords.longitude]
+}
+
+console.log(getCoords())
 
 
 // get user's time
@@ -35,7 +43,6 @@ function buildAd1() {
 buildAd1()
 
 // build ad 2
-
 
 // event listeners
 // on load, build ads
